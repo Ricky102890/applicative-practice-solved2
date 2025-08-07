@@ -5,7 +5,15 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithMassValue(data, number) {
-  // Your code goes here...
+  let massivePlanets = [];
+  const planets = data.planets;
+  planets.filter((planet) => {
+    const mass = planet.mass;
+    if (mass.massValue >= number) {
+      massivePlanets.push(planet.name);
+    }
+  });
+  return massivePlanets;
 }
 
 

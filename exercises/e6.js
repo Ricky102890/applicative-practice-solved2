@@ -5,7 +5,14 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
-  // Your code goes here...
+  let newAst = [];
+  const ast = data.asteroids;
+  ast.filter((ast) => {
+    if (ast.discoveryYear > year) {
+      newAst.push(ast.name);
+    }
+  });
+  return newAst;
 }
 
 

@@ -5,7 +5,22 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName) {
-  // Your code goes here...
+  const planets = data.planets;
+    let sample;
+    const planetsObjs = planets.filter((planetObj) => {
+        if (planetObj.moons) {
+            return planetObj;
+        }
+    });
+    planetsObjs.map((planets) => {
+        const planetMoons = planets.moons;
+        planetMoons.filter((moons) => {
+            if (moons === moonName) {
+                return sample = planets.name;
+            }
+        })
+    })
+    return sample;
 }
 
 
