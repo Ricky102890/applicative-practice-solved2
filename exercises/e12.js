@@ -5,7 +5,15 @@ import { data } from "../data/data";
 // Return example: 42
 
 export function allPlanetsMoonsCount(data) {
-  // Your code goes here...
+  const planets = data.planets;
+  let sumOfAllMoons = 0;
+  planets.map((planet) => {
+    const hasMoon = planet.moons;
+    if (hasMoon) {
+      sumOfAllMoons += hasMoon.length;
+    }
+  });
+  return sumOfAllMoons;
 }
 
 

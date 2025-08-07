@@ -10,7 +10,19 @@
 
 
 export function find(array, callback) {
-  // Your code goes here...
+  let result;
+  for (let i = 0; i < array.length; i++) {
+    const obj = array[i];
+    if (callback(obj)) {
+      result = obj;
+      break;
+    }
+    else if (!callback(obj)) {
+      result = undefined;
+    }
+
+  }
+  return result;
   
 }
 

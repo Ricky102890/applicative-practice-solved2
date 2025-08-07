@@ -6,7 +6,18 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  // Your code goes here...
+  const planets = data.planets;
+  let selectedPlanets = [];
+  planets.filter((planet) => {
+    const moonsArray = planet.moons;
+    if (moonsArray && moonsArray.length < 10) {
+      selectedPlanets.push(planet.name);
+    }
+    else if(!moonsArray) {
+      selectedPlanets.push(planet.name);
+    }
+  });
+  return selectedPlanets; 
 }
 
 // === TEST YOURSELF ===
