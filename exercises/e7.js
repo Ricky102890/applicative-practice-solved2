@@ -6,8 +6,7 @@ import { data } from "../data/data";
 
 export function getPlanetsNamesWithMoons(data) {
   let hasMoon = [];
-  const planets = data.planets;
-  planets.map((planet) => {
+  data.planets.map((planet) => {
     if (planet.moonsCount > 0) {
       hasMoon.push(planet.name);
     }
