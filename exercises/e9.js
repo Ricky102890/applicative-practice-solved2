@@ -5,9 +5,8 @@ import { data } from "../data/data";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getEarthData(data) {
-  const planets = data.planets;
   let isEarth;
-  planets.filter((planet) => {
+  data.planets.filter((planet) => {
     if (planet.name === "Earth") {
       isEarth = new Object(planet);
     }

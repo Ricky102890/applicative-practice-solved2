@@ -6,14 +6,12 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  const planets = data.planets;
   let selectedPlanets = [];
-  planets.filter((planet) => {
-    const moonsArray = planet.moons;
-    if (moonsArray && moonsArray.length < 10) {
+  data.planets.filter((planet) => {
+    if (planet.moons && planet.moons.length < 10) {
       selectedPlanets.push(planet.name);
     }
-    else if(!moonsArray) {
+    else if(!planet.moons) {
       selectedPlanets.push(planet.name);
     }
   });
